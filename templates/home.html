@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+      {% for message in messages %}
+      <div class="alert alert-{{message.level}}">
+        {{message}}
+      </div>
+      {% endfor %}
+    <h1>Welcome to a mini fullstack web page</h1>
+    {% if  user.is_authenticated %}
+    <h3> Hello {{ fname }} </h3>
+    <button type = 'submit'><a href='/signout'> Sign out</a></button><br/>
+    {% else %}
+    <button type = 'submit'><a href='/signup'> Sign up</a></button><br/>
+    <button type = 'submit'><a href='/signin'> Sign in</a></button><br/>
+    {% endif %}
+    <script src="" async defer></script>
+  </body>
+</html>

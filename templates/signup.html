@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        {% for message in messages%}
+            {{message }}
+        {% endfor %}
+        <h1>Create your account</h1>
+
+        <form action='/signup' method='post'>
+            {% csrf_token %}
+            <div class='form-group'>
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" id="username" Required>
+            </div>
+            <div class='form-group'>
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" id="email" Required>
+            </div>
+            <div class='form-group'>
+                <label for="pass1">Password</label>
+                <input type="password" class="form-control" name="pass1" id="pass1" Required>
+            </div>
+            <div class='form-group'>
+                <label for="pass2">Confirm Password</label>
+                <input type="password" class="form-control" name="pass2" id="pass2" Required>
+            </div>
+            <button type="submit" class="btn btn-primary"> Sign Up </button>
+        </form>
+        <script src="" async defer></script>
+    </body>
+</html>
